@@ -1,4 +1,5 @@
 import type Firebase from 'firebase';
+import isEqual from 'lodash-es/isEqual';
 import { runInAction, autorun, computed, makeObservable, IObservableArray } from 'mobx';
 
 import Collection from './Collection';
@@ -13,8 +14,6 @@ import {
 } from './Types';
 import { enhancedObservable } from './enhancedObservable';
 import { IContext, IHasContext } from './init';
-
-const isEqual = require('lodash.isequal');
 
 export type AggregateCollectionOrderBy<T> = (a: T, b: T) => number;
 export type AggregateCollectionFilterBy<T> = (doc: T) => boolean;
